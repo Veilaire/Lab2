@@ -1,0 +1,296 @@
+/* Adds padding and borders inside the element's total width and height */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E7E4DA;
+    color: #1F263A;
+    font-family: Arial, sans-serif;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+section {
+    padding: 45px 0;
+}
+h1,
+h2,
+h3 {
+    font-family: Georgia, serif;
+}
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 32px;
+}
+h3 {
+    font-size: 16px;
+    line-height: 1.6;
+}
+header {
+    padding: 25px 10%;
+    border-bottom: 1px solid #B8B0A6;
+}
+nav a {
+    color:#1F263A;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 15px;
+}
+nav a:hover {
+    color: #B8B0A6
+}
+#home {
+    padding: 70px 0;
+    border-bottom: 1px solid #B8B0A6;
+}
+#home h1 {
+    margin-bottom: 5px;
+}
+#home h2 {
+    color: #50594F;
+    margin-top: 0;
+}
+#home p {
+    font-size: 20px;
+    max-width: 600px;
+}
+#home a {
+    /* Allow an element to sit next to other elements but style size and spacing */
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1F263A;
+    color: #E7E4DA;
+    text-decoration: none;
+}
+#home a:hover {
+    background-color: #50594F;
+}
+#about {
+    /* Uses flexbox to position the image and text side by side based on available space*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    border-bottom: 1px solid #B8B0A6;
+}
+.about-text {
+    /* Take up available space next to the image within the flexbox */
+    flex: 1;
+}
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+#projects {
+    border-bottom: 1px solid #B8B0A6;
+}
+#projects article {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin-right: 3%;
+    margin-bottom: 40px;
+}
+#projects article:last-child {
+    margin-right: 0;
+}
+/* Keep artwork inside an image area */
+#projects article img {
+    width: 100%;
+    height: 250px;
+    /* Keeps images inside their dimensions without distorting their proportion */
+    object-fit: contain;
+    background-color: #E7E4DA;
+    display: block;
+    margin: 20px 0;
+}
+#projects article h3 {
+    margin-bottom: 10px;
+}
+#projects article p {
+    line-height: 1.5;
+    max-width: 100%;
+}
+#contact {
+    border-bottom: 1px solid #B8B0A6;
+}
+#contact form {
+    width: 500px;
+}
+#contact label {
+    display: block;
+    margin-bottom: 8px;
+}
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #B8B0A6;
+    background-color: #E7E4DA;
+    color: #1F263A;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+#contact textarea {
+    height: 150px;
+}
+#contact input[type="submit"] {
+    padding: 12px 25px;
+    background-color: #1F263A;
+    color: #E7E4DA;
+    border: none;
+    font-size: 15px;
+}
+#contact input[type="submit"]:hover {
+    background-color: #50594F;
+}
+footer {
+    padding: 40px 10%;
+    background-color: #1F263A;
+    color: #E7E4DA;
+}
+footer p {
+    margin: 0
+}
+footer .copyright {
+    margin-bottom: 10px;
+}
+footer .address {
+    color: #9AA6BD;
+    margin-bottom: 2px;
+}
+footer .footer-links {
+    margin: 0;
+}
+/* Decorative simple signal graphic */
+.signal {
+    width: 300px;
+    height: 30px;
+    margin: 25px 0;
+    position: relative;
+}
+.signal span {
+    position: absolute;
+    height: 2px;
+    background-color: #50594F;
+}
+.signal-left {
+    width: 110px;
+    left: 0;
+    top: 14px;
+}
+.signal-up {
+    width: 15px;
+    left: 110px;
+    top: 11px;
+    transform: rotate(-25deg);
+}
+.signal-down {
+    width: 15px;
+    left: 124px;
+    top: 11px;
+    transform: rotate(25deg);
+}
+.signal-right {
+    width: 110px;
+    left: 138px;
+    top: 14px;
+}
+table {
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.8rem;
+}
+th,
+td {
+    padding: 8px 20px 8px 0;
+    text-align: left;
+}
+th {
+    border-bottom: 1px solid #6b7468;
+}
+a {
+    color: #3f668f;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:focus {
+    outline: 2px solid #3f668f;
+    outline-offset: 2px;
+}
+/* For tablets */
+@media screen and (max-width: 900px) {
+    #about {
+        gap: 30px;
+    }
+
+    .about-image {
+        max-width: 300px;
+    }
+}
+/* For mobile phones */
+@media screen and (max-width: 700px) {
+    main {
+        width: 90%;
+        max-width: 100%;
+    }
+    header {
+        padding: 20px 5%;
+    }
+    nav a {
+        margin-right: 25px;
+        font-size: 14px;
+    }
+    #home {
+        padding: 70px 0;
+    }
+    #home h1 {
+        font-size: 38px;
+    }
+    #home p {
+        font-size: 18px;
+    }
+    #about {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .about-text {
+        width: 100%;
+    }
+    .about-image {
+        width: 100%;
+    }
+    .signal {
+        width: 250px;
+    }
+    #projects article {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+    #projects article img {
+        width: 100%;
+        height: 250px;
+    }
+    #contact form {
+        width: 100%;
+    }
+}
