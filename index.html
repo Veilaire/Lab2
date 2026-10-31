@@ -101,17 +101,32 @@
             <section id="contact">
                 <h2>Contact Me</h2>
                 <p>To get in touch with me, feel free to send a message below.</p>
-                <form action="mailto:craigslisthomeseller@gmail.com" method="post" enctype="text/plain">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
-                    <br><br>
+                <form id = "feedbackForm">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required minlength="2">
+                    <span id="fullNameError"></span>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                    <br><br>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="10" cols="50"></textarea>
-                    <br><br>
-                    <input type="submit" value="Send Message">
+                    <input type="email" id="email" name="email" required>
+                    <span id="emailError"></span>
+                    <label for="topic">Topic of Interest:</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Choose a topic</option>
+                        <option value="personalQuestion">Personal Question</option>
+                        <option value="Projects">Projects</option>
+                        <option value="Website">Website</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span id="topicError"></span>
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" name="comments" rows="10" cols="50" required minlength="15"></textarea>
+                    <span id="commentsError"></span>
+                    <p id="characterCounter">0 / 15 characters minimum</p>
+                    <label for="website">Website (optional):</label>
+                    <input type="url" id="website" name="website">
+                    <span id="websiteError"></span>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Clear">
+                    <p id="formStatus" role="status" aria-live="polite"></p>
                 </form>
             </section>
         </main>
