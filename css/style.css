@@ -294,3 +294,9 @@ a:focus {
         width: 100%;
     }
 }
+#characterCount {
+    color: #802019;
+}
+#characterCount.valid {
+    color: #3F6B45;
+}

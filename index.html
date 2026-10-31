@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio - Chin Chuan Liu</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/feedback.js" defer></script>
     </head>
     <body>
         <header>
@@ -101,7 +102,7 @@
             <section id="contact">
                 <h2>Contact Me</h2>
                 <p>To get in touch with me, feel free to send a message below.</p>
-                <form id = "feedbackForm">
+                <form id = "feedbackForm" novalidate>
                     <label for="fullName">Full Name:</label>
                     <input type="text" id="fullName" name="fullName" required minlength="2">
                     <span id="fullNameError"></span>
@@ -120,12 +121,12 @@
                     <label for="comments">Comments:</label>
                     <textarea id="comments" name="comments" rows="10" cols="50" required minlength="15"></textarea>
                     <span id="commentsError"></span>
-                    <p id="characterCounter">0 / 15 characters minimum</p>
+                    <p id="characterCount">0 / 15 characters minimum.</p>
                     <label for="website">Website (optional):</label>
                     <input type="url" id="website" name="website">
                     <span id="websiteError"></span>
-                    <input type="submit" value="Submit">
-                    <input type="reset" value="Clear">
+                    <input type="submit" id="submitButton" value="Submit">
+                    <input type="reset" id="resetButton" value="Clear">
                     <p id="formStatus" role="status" aria-live="polite"></p>
                 </form>
             </section>
