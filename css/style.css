@@ -294,9 +294,22 @@ a:focus {
         width: 100%;
     }
 }
+/* Lab 2 */
 #characterCount {
     color: #802019;
 }
 #characterCount.valid {
     color: #3F6B45;
+}
+/* Form fields are invalid */
+#contact input.invalid,
+#contact select.invalid,
+#contact textarea.invalid {
+    border: 2px solid #802019;
+}
+/* Form fields are valid */
+#contact input.valid,
+#contact select.valid,
+#contact textarea.valid {
+    border: 2px solid #3F6B45;
 }
