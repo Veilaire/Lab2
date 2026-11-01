@@ -313,3 +313,12 @@ a:focus {
 #contact textarea.valid {
     border: 2px solid #3F6B45;
 }
+/* Focus states for the form fields */
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact input[type="url"]:focus,
+#contact select:focus,
+#contact textarea:focus {
+    outline: 2px solid #3f668f;
+    outline-offset: 2px;
+}

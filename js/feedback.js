@@ -16,7 +16,8 @@ const resetButton = document.getElementById('resetButton');
 
 function validateFullName() {
     const fullNameValue = fullName.value;
-    if (fullNameValue.length < 2) {
+    // Make sure the full name is not empty and has at least 2 characters (excluding spaces)
+    if (fullNameValue.split(" ").join("").length < 2) {
         fullNameError.textContent = "Please enter at least 2 characters.";
         fullName.classList.add('invalid');
         fullName.classList.remove('valid');
@@ -35,7 +36,11 @@ function validateEmail() {
         email.classList.remove('valid');
         return false;
     }
-    if (emailValue.indexOf("@") === -1 || emailValue.indexOf(".") === -1) {
+    // Check for "@" and "." in the correct order
+    const atPosition = emailValue.indexOf("@");
+    const dotPosition = emailValue.lastIndexOf(".");
+    // Ensure that both "@" and "." exist first, "@" comes before the last ".", and that the last "." is not the last character
+    if (atPosition === -1 || dotPosition === -1 || dotPosition < atPosition || dotPosition === emailValue.length - 1) {
         emailError.textContent = "Please enter a valid email address.";
         email.classList.add('invalid');
         email.classList.remove('valid');
@@ -72,6 +77,26 @@ function validateComments() {
     comments.classList.remove('invalid');
     return true;
 }
+function validateWebsite() {
+    const websiteValue = website.value;
+    if (websiteValue === "") {
+        websiteError.textContent = "";
+        website.classList.remove('invalid', 'valid');
+        return true;
+    }
+    const dotPosition = websiteValue.indexOf(".");
+    // Ensure that the website is valid by checking if it has a dot and that the dot is not the last character
+    if (website.checkValidity() === false || dotPosition === -1 || dotPosition === websiteValue.length - 1) {
+        websiteError.textContent = "Please enter a valid website URL.";
+        website.classList.add('invalid');
+        website.classList.remove('valid');
+        return false;
+    }
+    websiteError.textContent = "";
+    website.classList.add('valid');
+    website.classList.remove('invalid');
+    return true;
+}
 function resetForm() {
     fullName.classList.remove('invalid','valid');
     email.classList.remove('invalid','valid');
@@ -89,24 +114,12 @@ function resetForm() {
 }
 feedbackForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    if (website.value !== "" && website.checkValidity() === false) {
-        websiteError.textContent = "Please enter a valid website URL.";
-        website.classList.add('invalid');
-        website.classList.remove('valid');
-        return;
-    }
-    website.classList.remove('invalid');
-    if (website.value !== "") {
-        website.classList.add('valid');
-    } else {
-        website.classList.remove('valid');
-    }
-    websiteError.textContent = "";
+    const isWebsiteValid = validateWebsite();
     const isTheFullNameValid = validateFullName();
     const isTheEmailValid = validateEmail();
     const isTheTopicValid = validateTopic();
     const isTheCommentsValid = validateComments();
-    if (isTheFullNameValid === false || isTheEmailValid === false || isTheTopicValid === false || isTheCommentsValid === false) {
+    if (isTheFullNameValid === false || isTheEmailValid === false || isTheTopicValid === false || isTheCommentsValid === false || isWebsiteValid === false) {
         return;
     }
     const submittedName = fullName.value;
