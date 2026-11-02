@@ -162,3 +162,8 @@ topic.addEventListener('change', function () {
         validateTopic();
     }
 });
+website.addEventListener('input', function () {
+    if (website.classList.contains('invalid') || website.classList.contains('valid')) {
+        validateWebsite();
+    }
+});
