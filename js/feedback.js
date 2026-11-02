@@ -108,8 +108,8 @@ function resetForm() {
     topicError.textContent = "";
     commentsError.textContent = "";
     websiteError.textContent = "";
-    characterCount.textContent = "0 / 15 characters minimum.";
-    characterCount.classList.remove('valid');
+    characterCount.textContent = "0 / 15";
+    characterCount.classList.remove('invalid','valid');
     formStatus.textContent = "";
 }
 feedbackForm.addEventListener('submit', function (event) {
@@ -132,11 +132,13 @@ feedbackForm.addEventListener('submit', function (event) {
 comments.addEventListener('input', function () {
     const commentsValue = comments.value;
     const currentLengthOfCharacters = commentsValue.length;
-    characterCount.textContent = currentLengthOfCharacters + " / 15 characters minimum.";
+    characterCount.textContent = currentLengthOfCharacters + " / 15";
     if (currentLengthOfCharacters >= 15) {
         characterCount.classList.add('valid');
+        characterCount.classList.remove('invalid');
     } else {
         characterCount.classList.remove('valid');
+        characterCount.classList.add('invalid');
     }
     if (comments.classList.contains('invalid') || comments.classList.contains('valid')) {
         validateComments();
@@ -158,10 +160,5 @@ email.addEventListener('input', function () {
 topic.addEventListener('change', function () {
     if (topic.classList.contains('invalid') || topic.classList.contains('valid')) {
         validateTopic();
-    }
-});
-comments.addEventListener('input', function () {
-    if (comments.classList.contains('invalid') || comments.classList.contains('valid')) {
-        validateComments();
     }
 });
