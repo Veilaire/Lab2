@@ -6,7 +6,12 @@ Course: DA558A HT26 - Javascript For Web Development
 Target Grade: Grade 3
 
 ## Project Description
-This project is an updated version of the personal portfilo Lab 1 which extends the existing website with functionality using HTML, CSS, and Vanilla JavaScript by introducing a clear and accessible interactive feedback form which validates input and gives immediate, friendly feedback in the webpage.
+This project is an updated version of the personal portfolio Lab 1 which extends the existing website with functionality using HTML, CSS, and Vanilla JavaScript by introducing a clear and accessible interactive feedback form which validates input and gives immediate, friendly feedback in the webpage.
+
+## Technologies Used
+* HTML5
+* CSS3
+* Vanilla JavaScript
 
 ## Feedback Form Structure
 | Field | HTML Type | Validation and Guidance |
@@ -17,11 +22,15 @@ This project is an updated version of the personal portfilo Lab 1 which extends 
 | Comments | textarea | Required; minimum 15 characters. |
 | Website | url | Optional; browser URL validation. |
 
-The form includes a live character counter in the comments
-field, visual validation feedback and error messages, personalized success message after valid submission,
-and a clear button for resetting.
+Additional Features:
+* Live character counter in the comments field
+* Visual validation feedback using red and green field states
+* Personalized success message after good submission (clears in 4 seconds)
+* Error messages for invalid inputs
+* Clear Button to reset the form
+* Submit Button to submit the form
 
-## How to Run The Project
+## How to Run the Project
 1) Download / clone the repository
 2) Open the project folder
 3) Open index.html in a web browser
