@@ -70,11 +70,15 @@ function validateComments() {
         commentsError.textContent = "Please enter at least 15 characters.";
         comments.classList.add('invalid');
         comments.classList.remove('valid');
+        characterCount.classList.add('invalid');
+        characterCount.classList.remove('valid');
         return false;
     }
     commentsError.textContent = "";
     comments.classList.add('valid');
     comments.classList.remove('invalid');
+    characterCount.classList.add('valid');
+    characterCount.classList.remove('invalid');
     return true;
 }
 function validateWebsite() {
