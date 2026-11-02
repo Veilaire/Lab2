@@ -273,27 +273,33 @@ a:focus {
     }
 }
 /* Lab 2 */
+
+/* Position and style the live character counter */
 #characterCount {
     text-align: right;
     color: #1F263A;
     margin-top: -18px;
     margin-bottom: 0px;
 }
+/* Change the counter color when the comment length is valid or invalid */
 #characterCount.valid {
     color: #3ab24a;
 }
 #characterCount.invalid {
     color: #b42d23;
 }
-/* Focus states for the form fields */
+/* Show a visible outline when a form element receives keyboard focus */
 #contact input[type="text"]:focus,
 #contact input[type="email"]:focus,
 #contact input[type="url"]:focus,
+#contact input[type="submit"]:focus,
+#contact input[type="reset"]:focus,
 #contact select:focus,
 #contact textarea:focus {
     outline: 2px solid #3f668f;
     outline-offset: 2px;
 }
+/* Apply consistent sizing, spacing, and styling to form fields */
 #contact input[type="text"],
 #contact input[type="email"],
 #contact input[type="url"],
@@ -308,6 +314,7 @@ a:focus {
     font-family: Arial, sans-serif;
     font-size: 15px;
 }
+/* Submit button styling*/
 #contact input[type="submit"]{
     padding: 12px 25px;
     background-color: #1F263A;
@@ -320,10 +327,7 @@ a:focus {
 #contact input[type="submit"]:hover{
     background-color: #50594F;
 }
-#contact input[type="submit"]:focus{
-    outline: 2px solid #3f668f;
-    outline-offset: 2px;
-}
+/* Clear button styling */
 #contact input[type="reset"] {
     padding: 12px 25px;
     background-color: #E7E4DA;
@@ -336,29 +340,33 @@ a:focus {
 #contact input[type="reset"]:hover {
     background-color: #B8B0A6;
 }
-#contact input[type="reset"]:focus {
-    outline: 2px solid #3f668f;
-    outline-offset: 2px;
-}
+/* Show validation error messages below their fields */
 #contact form span{
     display:block;
     margin-bottom: 15px;
     color: #b42d23;
 }
-/* Form fields are invalid */
+/* Form fields are invalid so show red border */
 #contact input.invalid,
 #contact select.invalid,
 #contact textarea.invalid {
     border: 2px solid #b42d23;
 }
-/* Form fields are valid */
+/* Form fields are valid so show green border */
 #contact input.valid,
 #contact select.valid,
 #contact textarea.valid {
     border: 2px solid #3ab24a;
 }
+/* Center the success message and make it green */
 #formStatus {
     margin-bottom: 15px;
     color:#3ab24a;
     text-align: center;
+}
+/* Add a smooth transition effect for border color changes */
+#contact input,
+#contact select,
+#contact textarea {
+    transition: border-color 0.2s ease-in-out;
 }

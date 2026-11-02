@@ -104,13 +104,13 @@
                 <p>To get in touch with me, feel free to send a message below.</p>
                 <form id = "feedbackForm" novalidate>
                     <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" required minlength="2">
+                    <input type="text" id="fullName" name="fullName" required minlength="2" autocomplete="name" aria-describedby="fullNameError">
                     <span id="fullNameError"></span>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="emailError">
                     <span id="emailError"></span>
                     <label for="topic">Topic of Interest:</label>
-                    <select id="topic" name="topic" required>
+                    <select id="topic" name="topic" required autocomplete="off" aria-describedby="topicError">
                         <option value="">Choose a topic</option>
                         <option value="personalQuestion">Personal Question</option>
                         <option value="Projects">Projects</option>
@@ -119,11 +119,11 @@
                     </select>
                     <span id="topicError"></span>
                     <label for="comments">Comments:</label>
-                    <textarea id="comments" name="comments" rows="10" cols="50" required minlength="15"></textarea>
+                    <textarea id="comments" name="comments" rows="10" cols="50" required minlength="15" autocomplete="off" aria-describedby="commentsError"></textarea>
                     <span id="commentsError"></span>
                     <p id="characterCount">0 / 15</p>
                     <label for="website">Website (optional):</label>
-                    <input type="url" id="website" name="website">
+                    <input type="url" id="website" name="website" autocomplete="url" aria-describedby="websiteError">
                     <span id="websiteError"></span>
                     <p id="formStatus" role="status" aria-live="polite"></p>
                     <input type="submit" id="submitButton" value="Submit">
