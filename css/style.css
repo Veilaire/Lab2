@@ -320,6 +320,10 @@ a:focus {
 #contact input[type="submit"]:hover{
     background-color: #50594F;
 }
+#contact input[type="submit"]:focus{
+    outline: 2px solid #3f668f;
+    outline-offset: 2px;
+}
 #contact input[type="reset"] {
     padding: 12px 25px;
     background-color: #E7E4DA;
@@ -331,6 +335,10 @@ a:focus {
 }
 #contact input[type="reset"]:hover {
     background-color: #B8B0A6;
+}
+#contact input[type="reset"]:focus {
+    outline: 2px solid #3f668f;
+    outline-offset: 2px;
 }
 #contact form span{
     display:block;
