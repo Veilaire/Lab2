@@ -76,9 +76,9 @@ function validateTopic() {
 // Validate the comments field
 function validateComments() {
     const commentsValue = comments.value;
-    // Check if the comments field has at least 15 characters
-    if (commentsValue.length < 15) {
-        commentsError.textContent = "Please enter at least 15 characters.";
+    // Check if the comments field has a minimum of 15 characters and a maximum of 50 characters
+    if (commentsValue.length < 15 || commentsValue.length > 50) {
+        commentsError.textContent = "Please enter a minimum of 15 and a maximum of 50 characters.";
         comments.classList.add('invalid');
         comments.classList.remove('valid');
         characterCount.classList.add('invalid');
@@ -131,7 +131,7 @@ function resetForm() {
     topicError.textContent = "";
     commentsError.textContent = "";
     websiteError.textContent = "";
-    characterCount.textContent = "0 / 15";
+    characterCount.textContent = "0 / 50";
     // Clear the form status message
     formStatus.textContent = "";
 }
@@ -164,9 +164,9 @@ comments.addEventListener('input', function () {
     const commentsValue = comments.value;
     const currentLengthOfCharacters = commentsValue.length;
     // Current character count
-    characterCount.textContent = currentLengthOfCharacters + " / 15";
-    // Change the counter color depending if minimum of 15 characters is reached
-    if (currentLengthOfCharacters >= 15) {
+    characterCount.textContent = currentLengthOfCharacters + " / 50";
+    // Change the counter color depending if the comments field is within the range of a minimum of 15 and a maximum of 50 characters
+    if (currentLengthOfCharacters >= 15 && currentLengthOfCharacters <= 50) {
         characterCount.classList.add('valid');
         characterCount.classList.remove('invalid');
     } else {

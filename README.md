@@ -19,7 +19,7 @@ This project is an updated version of the personal portfolio Lab 1 which extends
 | Full Name | text | Required; at least 2 characters. |
 | Email | email | Required; plausible address with @ and a domain. |
 | Topic of Interest | select | Required; placeholder and at least 3 choices. |
-| Comments | textarea | Required; minimum 15 characters. |
+| Comments | textarea | Required; minimum of 15 and maximum of 50 characters. |
 | Website | url | Optional; browser URL validation. |
 
 Additional Features:
